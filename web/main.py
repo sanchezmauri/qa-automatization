@@ -1,3 +1,4 @@
+from driver.chrome_driver_win import ChromeDriverWin
 # This is a sample Python script.
 
 # Press ⌃R to execute it or replace it with your code.
@@ -10,7 +11,16 @@ def print_hi(name):
 
 
 # Press the green button in the gutter to run the script.
-if __name__ == '__main__':
+try:
     print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    chrome_driver_win = ChromeDriverWin()
+    chrome_driver_win.test()
+
+    # Example throw exception
+    # raise Exception("error")
+except Exception as e:
+    print(f"error exception handler {str(e)}")
+finally:
+    print("finllay block")
+
